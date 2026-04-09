@@ -120,7 +120,12 @@ sudo systemctl restart smbd
 
 <h3><b>Screenshots</b></h3>
 
- 
+ <img width="1920" height="1035" alt="jellyfin dashboard" src="https://github.com/user-attachments/assets/847e3486-e030-4c5b-86dc-8f048374396a" />
+
+ <img width="1919" height="956" alt="image" src="https://github.com/user-attachments/assets/4de57803-c77c-4170-86d1-5bbaabcda3f9" />
+
+<img width="1163" height="768" alt="SSH" src="https://github.com/user-attachments/assets/7300764f-6617-4159-badc-9db746e4da74" />
+
 
 
 
