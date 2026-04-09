@@ -26,6 +26,104 @@ This project demonstrates the deployment and configuration of a self-hosted medi
 <h3><b>Installation Steps</b></h3> (Ubuntu CLI)<br>
 <br>
 <b>1. Update System</b>
+<br>
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+
+```
+<b>2. Install Jellyfin</b>
+
+```bash
+sudo apt install jellyfin
+
+```
+<b>3. Enable and Start Service</b>
+
+```bash
+sudo systemctl enable jellyfin
+sudo systemctl start jellyfin
+
+```
+
+<b>4. Install SSH</b>
+
+```bash
+sudo apt install openssh-server
+
+```
+
+<h3><b>Access Jellyfin</b></h3>
+
+```bash
+http://<server-ip>:8096
+
+```
+
+<h3><b>Media Directory Setup</b></h3>
+
+```bash
+sudo mkdir -p /srv/media
+sudo chown -R usr_name:usr_name /srv/media
+sudo chmod -R 775 /srv/media
+
+```
+
+<h3><b>Permission Configuration</b></h3>
+
+```bash
+sudo usermod -aG media jellyfin
+
+```
+
+<h3><b>Samba Configuration</b></h3>
+
+<b>Install :</b>
+
+```bash
+sudo apt install samba
+
+```
+
+<b>Edit :</b>
+
+```bash
+sudo nano /etc/samba/smb.conf
+
+```
+
+<b>Add :</b>
+
+```bash
+[Media]
+path = /srv/media
+browseable = yes
+read only = no
+
+```
+
+<b>Restatrt :</b>
+
+```bash
+sudo systemctl restart smbd
+
+```
+
+<h3><b>✅ Testing & Verification</b></h3>
+
+   <li>  Jellyfin web UI accessible</li> 
+   <li>  Media files detected</li> 
+   <li>  Streaming works on client</li> 
+   <li>  SSH remote login successful </li> 
+
+<br>
+
+<h3><b>Screenshots</b></h3>
+
+ 
+
+
+
+
+   
+   
